@@ -12,7 +12,57 @@
 # To accomplish this, you should define two classes - a TodoList class
 # and a TodoListItem class.
 class TodoList
+    attr_accessor :title, :description
+    # title and description
+    def initialize(title)
+        @title = title
+        @list = {}
+    end
+    # update title and description
+    def update_title(title)
+        @title = title
+    end
+    # add and delete items from list
+    def add_item(item)
+        @list[item] = TodoListItem.new
+    end
+
+    def delete_item(item)
+        @list.delete(item)
+    end
+    
+    # get a count of items in the list
+    def count
+        return @list.length
+    end
+
+    def title
+        return @title
+    end
+
+    def update_done(item)
+        # item.done? = true
+        @list[item].done = true
+    end
+
+    def get_item(item)
+        @list[item]
+    end
+
+    def all_done?
+        @list.values.none?
+    end
+
 end
 
 class TodoListItem
+    attr_accessor :done
+
+    def initialize()
+        @done = false
+    end
+
+    def done?
+        @done
+    end
 end
