@@ -21,18 +21,25 @@
 # Complete the functions in order to provide this functionality.
 
 class Jug
+    attr_accessor :capacity
     def initialize(capacity)
+        @capacity = capacity
+        concentration = {}
     end
 
     def add(amount, type)
+        #concentrations
+        
     end
 
     def pour(amount)
+
     end
 
     def getTotalAmount
     end
 
     def getConcentration(type)
+        
     end
 end
