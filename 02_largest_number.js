@@ -9,21 +9,34 @@ mocha 02_largest_number.js
 */
 
 function largestNumber(arr) {
-    // Your code here
-    // Google JS syntax ;)
+    if (typeof arr !== 'undefined' && arr.length > 0) {
+        for (let num of arr) {
+            if (Number.isInteger(num)) {
+                continue
+            } else {
+                arr.splice( arr.indexOf(num), 1 ) 
+            }
+        }
+        let largestNumber = Math.max(...arr);
+        return largestNumber
+    } else {
+        return null
+    }
+        
 }
+
 
 var assert = require('assert');
 
 describe('largestNumber', function () {
     it('should return the largest number', function () {
-        assert.equal(10, largestNumber([5, -2, 10]));
+        assert.equal(largestNumber([5, -2, 10]), 10);
     })
     it('should ignore invalid array entries', function () {
-        assert.equal(10, largestNumber([10, 10, 's']));
+        assert.equal(largestNumber([10, 10, 's']), 10);
     })
     it('should return null if the array is empty', function () {
-        assert.equal(null, largestNumber([]))
+        assert.equal(largestNumber([]), null)
     })
 
 })

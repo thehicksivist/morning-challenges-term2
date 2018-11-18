@@ -8,11 +8,11 @@ Note that for the bootstrap js suport (for modals), you have to add gem 'jquery'
 In this weeks challenges, you will make changes to this application to complete the implementation and enhance it. 
 
 ## Setup
-1. Run **bundle install** to install required gems
-2. Update the config/database.yml to specify your Postgresql configuration information
-3. Run **rails db:setup**
-4. Run **rails db:migrate**
-5. Start the rails server (**rails s**)
+<!-- 1. Run **bundle install** to install required gems -->
+<!-- 2. Update the config/database.yml to specify your Postgresql configuration information -->
+<!-- 3. Run **rails db:setup** -->
+<!-- 4. Run **rails db:migrate** -->
+<!-- 5. Start the rails server (**rails s**) -->
 6. Verify you can see the application up and running
 7. Verify you can see the forum databases created in your postgresql instance in pgadmin4
 

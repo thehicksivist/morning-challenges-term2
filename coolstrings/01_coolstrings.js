@@ -9,12 +9,16 @@
   // 
   // end
 // What is the main way to write methods in JavaScript?
+// function myFunction(p1, p2) {
+//   return p1 * p2;              // The function returns the product of p1 and p2
+// }
 
 // Instead of puts, what does JavaScript use instead?
+// console.log()
 
 
-
-
+const coolstrings = 'coolstrings';
+var numbers = 7;
 
 function setNumbers(num) {
   numbers = num;  
