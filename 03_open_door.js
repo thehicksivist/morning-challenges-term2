@@ -8,8 +8,20 @@ mocha 03_open_door.js
 
 function openDoor(input) {
     // Your code here
+    let result = false
 
+    for (item of input) {
+        if (item['name'] == 'Simon' && item['hasCoffee'] == true) {
+            result = true
+            break
+        } else {
+            result = false
+            continue
+        }
+    }
+    return result
 }
+
 
 function makeItem(name, hasCoffee) {
     item = new Object()
@@ -17,6 +29,7 @@ function makeItem(name, hasCoffee) {
     item.hasCoffee = hasCoffee
     return item
 }
+
 
 var assert = require('assert');
 
@@ -46,5 +59,5 @@ describe('openDoor', function () {
     it('should return false if empty array passed', function () {
         hash = []
         assert.equal(false, openDoor(hash))
-    })
+    })   
 })
