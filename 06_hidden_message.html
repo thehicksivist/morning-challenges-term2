@@ -7,9 +7,9 @@
   give you enough hints to complete the challenge **
 
   Your challenge is to:
-  1. CSS: Change the background colour of the secret message.
-  2. HTML: Add another button "Hide secret message"
-  3. JS: Make the hide button work!
+  1. CSS: Change the background colour of the secret message. DONE
+  2. HTML: Add another button "Hide secret message" DONE
+  3. JS: Make the hide button work! DONE
 
   Hints:
   element.style.whatever lets us modify an element's CSS using JS.
@@ -26,7 +26,7 @@
       text-align: center;
     }
     #hidden-message {
-      background: #c4c5ff;
+      background: #058817;
       padding: 200px;
       display: none;
     }
@@ -36,6 +36,8 @@
   <body>
     <div id="hidden-message">This is our hidden message!</div>
     <button id="button-show">Show secret message</button>
+    <button id="button-hide">Hide secret message</button>
+
   </body>
 
   <script>
@@ -45,10 +47,18 @@
   // Get the element #button-show and assign it to buttonShow variable
   const buttonShow = document.querySelector('#button-show')
 
+  const buttonHide = document.querySelector('#button-hide')
+
+
   // Listen for a buttonShow click
   buttonShow.onclick = function () {
     // buttonShow has been clicked, show the hidden message.
     hiddenMessage.style.display = 'block';
+  }
+
+   buttonHide.onclick = function () {
+    // buttonShow has been clicked, show the hidden message.
+    hiddenMessage.style.display = 'none';
   }
   </script>
 
