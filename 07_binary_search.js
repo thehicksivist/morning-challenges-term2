@@ -18,7 +18,44 @@ Example:
 
 function binarySearch(sortedArray, searchValue) {
     // Your code here
+
+    let loops = 0
+    let valueFound = false
+    const foundIndex = sortedArray.indexOf(searchValue)
+
+    while (valueFound == false) {
+
+        loops += 1
+        // console.log(loops)
+
+        let midpoint = sortedArray[Math.floor(sortedArray.length / 2)]
+        let midIndex = sortedArray.indexOf(midpoint)
+        // console.log(midpoint)
+
+        if (searchValue == midpoint) {
+
+            valueFound = true
+            deepEqual = [foundIndex, loops]
+            // console.log(deepEqual)
+            return deepEqual
+
+        } else if (searchValue > midpoint) {
+            // split bottom half off of array and set it to sortedArray, then call binary Search again
+            splicedArray = sortedArray.splice(midIndex+1);
+            sortedArray = splicedArray
+            // console.log('greater')
+
+        } else if (searchValue < midpoint) {
+            // split top half off of array and set it to sortedArray, then call binary Search again
+            sortedArray.splice(midIndex)
+            // console.log('less')
+
+        }
+
+    }
 }
+
+// binarySearch([1, 3, 7, 10, 14, 19, 31], 31)
 
 
 let assert = require('assert')
