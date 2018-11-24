@@ -9,6 +9,13 @@ If the input array is empty consider it as: [0] (array with a zero).
 
 function oddOrEven(array) {
     //enter code here
+    let total = array.reduce((a, b) => a + b, 0);
+
+    if (total % 2 == 0) {
+        return 'even'
+    } else {
+        return 'odd'
+    }
 }
 
 var assert = require('assert');
@@ -18,6 +25,11 @@ describe('oddOrEven', function() {
         assert.equal(oddOrEven([0]), 'even');
         assert.equal(oddOrEven([1]), 'odd')
         assert.equal(oddOrEven([]), 'even')
+    });
+    it('myEven tests', function() {
+        assert.equal(oddOrEven([2, 1, 5]), 'even')
+        assert.equal(oddOrEven([2, 1, 3]), 'even')
+        assert.equal(oddOrEven([1023, 1, 2]), 'even')
     });
     it('Even tests', function() {
         assert.equal(oddOrEven([0, 1, 5]), 'even')
