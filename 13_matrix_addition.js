@@ -18,7 +18,63 @@ It may help to write out the array beforehand if the examples are confusing.
 
 function matrixAddition(matrixOne, matrixTwo) {
     // Your code here
+    // at multiple points, before adding if arrayOne.length != arrayTwo.length, return null
+    // check for multi-dimensional arrays
+    // if multi-dimensional, add first array of matrixOne and matrix two, 
+    // set as first of result matrix, repeat for second
+    let result = []
+    let i = 0
+    let type = ''
+
+    if (typeof matrixOne[0][0] == 'undefined') {
+        type = '1D'
+        console.log('1D')
+    } else {
+        type = '2D'
+        console.log('2D')
+    }
+
+    if (type == '1D'){
+        if (matrixOne.length != matrixTwo.length) {
+            return null
+            }
+        for (num of matrixOne) {
+            let res = num + matrixTwo[i]
+            result.push(res)
+            i++
+           
+        }
+    return result
+
+    } else if (type == '2D') {
+        if (matrixOne[0].length != matrixTwo[0].length || matrixOne[1].length != matrixTwo[1].length) {
+            return null
+            }
+        let result = [[],[]]
+        let i = 0
+        for (num of matrixOne[0]) {
+            let res = num + matrixTwo[0][i]
+            result[0].push(res)
+            i++
+        }
+
+        i = 0
+
+        for (num of matrixOne[1]) {
+            let res = num + matrixTwo[1][i]
+            result[1].push(res)
+            i++
+        }
+        return result
+    }
+
+    // console.log(result)
+    // return result
 }
+
+// matrixAddition([5,0,40,29,10], [5,4,10,2,7])
+// matrixAddition([[1,2,3,4], [5,6,7,8]], [[1,2,3,4], [5,6,7,8]])
+// matrixAddition([8,12,5], [40,21,8,17])
 
 const assert = require ('assert');
 
