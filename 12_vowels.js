@@ -1,3 +1,4 @@
+
 /*
 Vowels
 
@@ -12,21 +13,18 @@ Check your solution by running the tests:
 mocha 12_vowels.js
 */
 
-
+let aeiou = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
 
 function vowels (string) {
     // Your code here
+    let result = []
+    for (char of string) {
+        if (aeiou.includes(char)) {
+            result.push(char)
+        }
+    }
+    // console.log(result)
+    return result
 }
 
-
-var assert = require('assert');
-
-describe('vowels', function() {
-    it('Should return the vowels from a string', function() {
-        assert.deepEqual(vowels("The quick brown fox"), ["e","u","i","o","o"]);
-        assert.deepEqual(vowels("Hello World"), ["e","o","o"]);
-    })
-    it('Test vowels casing', function() {
-        assert.deepEqual(vowels("cAse tEst"), ["A","e","E"])
-    })
-})
+module.exports = vowels

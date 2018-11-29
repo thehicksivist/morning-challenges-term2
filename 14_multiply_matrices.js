@@ -18,17 +18,28 @@ Try drawing the function out first if the arrays are a little confusing.
 
 function multiplyMatrices(matrixOne, matrixTwo) {
     // Your code here    
+    // multiply the row in one vs the column in two, add the results together
+    // make a row and a column?
+    console.log(matrixOne[0])
+    console.log(matrixTwo[0][0])
+    matrixThree = [[],[]]
+    matrixThree[0][0] = (matrixOne[0][0] * matrixTwo[0][0]) + (matrixOne[0][1] * matrixTwo[1][0]) + (matrixOne[0][2] * matrixTwo[2][0])
+    console.log(matrixThree)
+
 }
 
+multiplyMatrices([[1,2,3],[4,5,6]], [[7,8],[9,10],[11,12]])
 
-const assert = require ('assert');
 
-describe('Matrix multiplication', function () {
-    it('Should return the multipilcation of a matrix', function () {
-        assert.deepEqual([[58,64], [139,154]], multiplyMatrices([[1,2,3],[4,5,6]], [[7,8],[9,10],[11,12]]))
-    })
-    it('Should return null if the matrix cannot be multiplied', function() {
-        assert.deepEqual(null, multiplyMatrices( [[8,12,5], [40,21,8,17]], [[3,2,1,6], [7,4,1,9]]))
-        assert.deepEqual(null, multiplyMatrices( [[8,12,5], [40,21,8]], [[3,2,1], [7,4,1]]))
-    })
-})
+
+// const assert = require ('assert');
+
+// describe('Matrix multiplication', function () {
+//     it('Should return the multipilcation of a matrix', function () {
+//         assert.deepEqual([[58,64], [139,154]], multiplyMatrices([[1,2,3],[4,5,6]], [[7,8],[9,10],[11,12]]))
+//     })
+//     it('Should return null if the matrix cannot be multiplied', function() {
+//         assert.deepEqual(null, multiplyMatrices( [[8,12,5], [40,21,8,17]], [[3,2,1,6], [7,4,1,9]]))
+//         assert.deepEqual(null, multiplyMatrices( [[8,12,5], [40,21,8]], [[3,2,1], [7,4,1]]))
+//     })
+// })

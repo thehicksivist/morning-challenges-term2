@@ -14,7 +14,29 @@ Test: mocha 11_binary_to_decimal
 
 function binaryToDecimal(binaryNumber) {
     // Your code here
+    let arr = (""+binaryNumber).split('').map(Number).reverse()
+    let arr2 = []
+    let i = 1
+
+    for (let num of arr) {
+        if (num > 1){
+            return null
+        }
+        num *= i
+        arr2.push(num)
+        // console.log(num)
+        i *= 2
+        // console.log(arr)
+
+    }
+
+    let result = arr2.reduce((a, b) => a + b);
+    console.log(result)
+    return result
+    
 }
+
+// binaryToDecimal(1011)
 
 let assert = require('assert')
 
